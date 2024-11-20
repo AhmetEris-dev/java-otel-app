@@ -1,8 +1,6 @@
-.navbar-x-brand{
-    color: #FEA116;
+.card-title{
     font-family: "Montserrat", serif;
     font-style: normal;
-
-  
+    font-weight: bold;
+    font-size: 18px;
 }
-

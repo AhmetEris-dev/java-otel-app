@@ -1,0 +1,14 @@
+.header-x-row{
+    color: #FEA116;
+    font-family: "Montserrat", serif;
+    font-style: normal;
+    font-weight: bold;
+}
+
+.x-btn-class{
+    background-color: #FEA116;
+    color: white;
+    font-weight: bold;
+    height: 70px;
+    font-size: 20px
+}
