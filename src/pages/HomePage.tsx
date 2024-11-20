@@ -21,15 +21,15 @@ function HomePage() {
             <ContentCarouselDate />
         </div>
 
-        <div className="row">
+        <div className="row m-2">
             <ContentAbout />
         </div>
         
-        <div className='row'>
+        <div className='row ms-2'>
           <ContentAboutRooms />
         </div>
 
-        <div className="row">
+        <div className="row ms-2">
            <ContentServices />
         </div>
     </div>
