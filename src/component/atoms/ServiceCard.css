@@ -1,0 +1,18 @@
+.service-card{
+    display: flex;
+    flex-direction: column;
+    height: 320px;
+    padding: 30px;
+
+}
+
+.card-x:hover{
+    background-color: #FEA116;
+    cursor: pointer;
+}
+
+.card-icon{
+    margin: 0 auto 30px auto;
+    width: 65px;
+    height: 65px;
+}

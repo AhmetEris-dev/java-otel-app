@@ -12,8 +12,19 @@ function ContentServices() {
                 <h1 style={{ fontWeight: 'bold' }}> Explore Our <span style={{ color: '#FEA116', fontWeight: 'bold' }}>SERVİCES</span> </h1>
             </div>
 
-            <div className='row'>
-                <ServiceCard />
+            <div className='row g-4 '>
+                <ServiceCard iconType='Hotel' name='Rooms & Apartment' description='Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio distinctio quod necessitatibus odit cumque ullam voluptatem dolor nisi quasi sequi soluta ab exercitationem laudantium autem ad dolorem architecto, commodi ipsam!
+'/>
+                <ServiceCard iconType='Food' name='Food & Restaurant' description='Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio distinctio quod necessitatibus odit cumque ullam voluptatem dolor nisi quasi sequi soluta ab exercitationem laudantium autem ad dolorem architecto, commodi ipsam!
+'/>
+                <ServiceCard iconType='Spa' name='Spa & Fitness' description='Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio distinctio quod necessitatibus odit cumque ullam voluptatem dolor nisi quasi sequi soluta ab exercitationem laudantium autem ad dolorem architecto, commodi ipsam!
+'/>
+                <ServiceCard iconType='Swim' name='Sports & Gaming' description='Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio distinctio quod necessitatibus odit cumque ullam voluptatem dolor nisi quasi sequi soluta ab exercitationem laudantium autem ad dolorem architecto, commodi ipsam!
+'/>
+                <ServiceCard iconType='Party' name='Event & Party' description='Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio distinctio quod necessitatibus odit cumque ullam voluptatem dolor nisi quasi sequi soluta ab exercitationem laudantium autem ad dolorem architecto, commodi ipsam!
+'/>
+                <ServiceCard iconType='Spor' name='GYM & Yoga' description='Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio distinctio quod necessitatibus odit cumque ullam voluptatem dolor nisi quasi sequi soluta ab exercitationem laudantium autem ad dolorem architecto, commodi ipsam!
+'/>
             </div>
         </>
     )

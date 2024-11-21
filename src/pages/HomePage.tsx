@@ -5,34 +5,98 @@ import ContentCarouselDate from '../component/molecules/ContentCarouselDate'
 import ContentAbout from '../component/molecules/ContentAboutUs'
 import ContentAboutRooms from '../component/molecules/ContentAboutRooms'
 import ContentServices from '../component/molecules/ContentServices'
+import ContentCarouselComment from '../component/molecules/ContentCarouselComment'
+import Footer from '../component/molecules/Footer'
+import './HomePage.css'
 
 function HomePage() {
   return (
-    <div className='container'style={{backgroundColor: 'white'}}>
-        <div className="row bg-dark" >
-            <Header />
+    <div className='container'>
+      <div className="container">
+        <div className="row gx-0" >
+          <Header />
         </div>
-        {/** Carousel kısmı */}
-        <div className="row " style={{backgroundColor:'rgb(238, 245, 248)'}} >
-            <ContentCarousel />
-        </div>
+      </div>
 
+      {/** Carousel kısmı */}
+      <div className="container" style={{ backgroundColor: 'white', borderTopLeftRadius: '15px', borderTopRightRadius: '15px' }}>
+        <div className="row " >
+          <ContentCarousel />
+        </div>
+      </div>
+
+      <div className="container" style={{ backgroundColor: 'white' }}>
         <div className="row" >
-            <ContentCarouselDate />
+          <ContentCarouselDate />
         </div>
+      </div>
 
-        <div className="row m-2">
-            <ContentAbout />
+      {/**About kısmı */}
+      <div className="container" style={{ backgroundColor: 'white' }}>
+        <div className="row ms-2">
+          <ContentAbout />
         </div>
-        
-        <div className='row ms-2'>
+      </div>
+
+      {/**Odalar Kısmı */}
+      <div className="container" style={{ backgroundColor: 'white' }}>
+        <div className='row ms-2' >
           <ContentAboutRooms />
         </div>
+      </div>
 
+      {/** Otel Özellikleri */}
+      <div className="container" style={{ backgroundColor: 'white' }}>
         <div className="row ms-2">
-           <ContentServices />
+          <ContentServices />
         </div>
+      </div>
+
+      <div className="container" style={{ backgroundColor: 'white' }}>
+        <div className="row" style={{ height: '50px' }}>
+
+        </div>
+      </div>
+
+      {/** Yorumlar */}
+      <div className="container" style={{ backgroundColor: 'white' }}>
+        <div className="row">
+          <h6 style={{ color: '#FEA116' }} className='ms-5 text-center '>  <div className='mb-1  me-2' style={{ width: '50px', display: 'inline-block', borderBottom: '3px solid #FEA116' }} />OUR COMMENTS
+            <div className='mb-1 ms-2' style={{ width: '50px', display: 'inline-block', borderBottom: '3px solid #FEA116' }} />
+          </h6>
+          <h1 className='text-center ms-5' style={{ fontWeight: 'bold' }}> Explore Our <span style={{ color: '#FEA116', fontWeight: 'bold' }}>COMMENTS</span> </h1>
+        </div>
+        <div className="row  row-section">
+
+
+          <ContentCarouselComment />
+
+
+        </div>
+      </div>
+
+      <div className="container" style={{ backgroundColor: 'white' }}>
+        <div className="row" style={{ height: '50px' }}>
+
+        </div>
+      </div>
+
+      {/**Footer */}
+      <div className="container" style={{ backgroundColor: 'white' }}>
+        <div className="row bg-dark ">
+          <Footer />
+          <hr style={{ color: 'white' }} />
+        </div>
+        <div className="row bg-dark" style={{ height: '25px' }}>
+
+        </div>
+      </div>
+
+      <div className="container" style={{ backgroundColor: 'white' }}>
+
+      </div>
     </div>
+
   )
 }
 

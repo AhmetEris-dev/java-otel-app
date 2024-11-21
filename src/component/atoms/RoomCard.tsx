@@ -51,7 +51,7 @@ function RoomCard( props: IRoomProps) {
                     </p>
                     <div className='d-flex justify-content-between mb-3 '>
                         <button style={{ border: 'none', backgroundColor: '#FEA116', color: 'black', width: '150px', fontWeight: 'bold' }} className='btn p-3'>View Detail</button>
-                        <button style={{ border: 'none', backgroundColor: 'black', color: '#FEA116', width: '150px', fontWeight: 'bold' }} className='btn p-3'>Book Now</button>
+                        <button style={{ border: 'none', backgroundColor: 'black', color: 'white', width: '150px', fontWeight: 'bold' }} className='btn p-3'>Book Now</button>
                     </div>
 
                 </div>

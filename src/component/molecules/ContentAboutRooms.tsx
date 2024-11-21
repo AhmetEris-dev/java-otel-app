@@ -15,16 +15,16 @@ function ContentAboutRooms() {
                 <div className="col-lg-4 col-md-6">
                     <RoomCard name='Junior Suite' bed='3 Bed' bath='2 Bath' wifi='Wifi' price='$100/Night' description='Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti, optio reiciendis laborum quaerat asperiores iusto maiores harum sapiente ullam distinctio aliquam aspernatur quis incidunt unde illum eaque quo error eos!
 '/>
-                   
+
                 </div>
                 <div className="col-lg-4 col-md-6">
-                        <RoomCard name='Junior Suite' bed='3 Bed' bath='2 Bath' wifi='Wifi' price='$100/Night' description='Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti, optio reiciendis laborum quaerat asperiores iusto maiores harum sapiente ullam distinctio aliquam aspernatur quis incidunt unde illum eaque quo error eos!
+                    <RoomCard name='Executive Suite' bed='3 Bed' bath='2 Bath' wifi='Wifi' price='$100/Night' description='Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti, optio reiciendis laborum quaerat asperiores iusto maiores harum sapiente ullam distinctio aliquam aspernatur quis incidunt unde illum eaque quo error eos!
 '/>
-                    </div>
-                    <div className="col-lg-4 col-md-6">
-                        <RoomCard name='Junior Suite' bed='3 Bed' bath='2 Bath' wifi='Wifi' price='$100/Night' description='Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti, optio reiciendis laborum quaerat asperiores iusto maiores harum sapiente ullam distinctio aliquam aspernatur quis incidunt unde illum eaque quo error eos!
+                </div>
+                <div className="col-lg-4 col-md-6">
+                    <RoomCard name='Super Delux' bed='3 Bed' bath='2 Bath' wifi='Wifi' price='$100/Night' description='Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti, optio reiciendis laborum quaerat asperiores iusto maiores harum sapiente ullam distinctio aliquam aspernatur quis incidunt unde illum eaque quo error eos!
 '/>
-                    </div>
+                </div>
             </div>
 
 
