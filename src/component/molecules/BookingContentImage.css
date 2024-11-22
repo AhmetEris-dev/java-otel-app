@@ -1,0 +1,14 @@
+.booking-header{
+   position: absolute; 
+   top: 160px;
+   left: 500px; 
+   color: black;
+   font-family: "Montserrat", serif;
+   font-style: normal;
+   font-weight: bold;
+   font-size: 50px;
+}
+
+.booking-img{
+    opacity: 0.5;
+}

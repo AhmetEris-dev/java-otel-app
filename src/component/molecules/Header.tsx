@@ -4,7 +4,14 @@ import HeaderLeftIcons from '../atoms/HeaderLeftIcons'
 import HeaderRightIcons from '../atoms/HeaderRightIcons'
 import HeaderNavbar from '../atoms/HeaderNavbar'
 
-function Header() {
+interface IHeaderProps{
+    page: string
+}
+
+function Header(props: IHeaderProps) {
+
+    const page = props.page;
+
     return (
         <>
             <div className="col-lg-3 bg-dark d-none d-lg-block ">
@@ -24,7 +31,7 @@ function Header() {
                 </div>
 
                 <nav className="navbar navbar-expand-lg bg-dark p-3">
-                   <HeaderNavbar />
+                   <HeaderNavbar page={page} />
                 </nav>
             </div>
 

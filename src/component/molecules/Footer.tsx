@@ -15,6 +15,8 @@ function Footer() {
         <div className="col-4 mt-5">
             <FooterCardServices />
         </div>
+        <hr style={{ color: 'white' }} />
+        
     </>
   )
 }

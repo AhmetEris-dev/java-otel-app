@@ -14,7 +14,7 @@ function HomePage() {
     <div className='container'>
       <div className="container">
         <div className="row gx-0" >
-          <Header />
+          <Header page='HOME' />
         </div>
       </div>
 
@@ -32,7 +32,7 @@ function HomePage() {
       </div>
 
       {/**About kısmı */}
-      <div className="container" style={{ backgroundColor: 'white' }}>
+      <div className="container" style={{ backgroundColor: 'white' }} id='about'>
         <div className="row ms-2">
           <ContentAbout />
         </div>
@@ -46,8 +46,8 @@ function HomePage() {
       </div>
 
       {/** Otel Özellikleri */}
-      <div className="container" style={{ backgroundColor: 'white' }}>
-        <div className="row ms-2">
+      <div className="container" style={{ backgroundColor: 'white' }} id='roomservice'>
+        <div className="row ms-2" >
           <ContentServices />
         </div>
       </div>
@@ -82,18 +82,21 @@ function HomePage() {
       </div>
 
       {/**Footer */}
-      <div className="container" style={{ backgroundColor: 'white' }}>
+      <div className="container" style={{ backgroundColor: 'white' }} id='footer'>
         <div className="row bg-dark ">
-          <Footer />
-          <hr style={{ color: 'white' }} />
-        </div>
-        <div className="row bg-dark" style={{ height: '25px' }}>
+          <Footer  />
 
         </div>
+      
       </div>
 
+      {/** Footer Alt */}
       <div className="container" style={{ backgroundColor: 'white' }}>
-
+      <div className="row bg-dark" style={{ height: '25px' }}>
+            <span className='ms-5' style={{color: 'white'}}>
+            <i className="fa-regular fa-copyright" style={{color: 'white'}}></i>
+              Java15-Room2</span>
+        </div>
       </div>
     </div>
 
