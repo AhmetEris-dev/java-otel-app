@@ -28,7 +28,7 @@ function ContentAbout() {
                         <div className='border rounded p-1'>
                             <div className='border rounded p-4 text-center'>
                                 <i className='fa fa-hotel fa-2x mb-2' style={{ color: '#FEA116' }}></i>
-                                <Counter targetValue={1234} />
+                                <Counter targetValue={6891} />
                                 <p className='mb-0'>Rooms</p>
                             </div>
                         </div>
@@ -37,7 +37,7 @@ function ContentAbout() {
                         <div className='border rounded p-1'>
                             <div className='border rounded p-4 text-center'>
                                 <i className='fa fa-users-cog fa-2x  mb-2' style={{ color: '#FEA116' }}></i>
-                                <Counter targetValue={5000} />
+                                <Counter targetValue={8975} />
                                 <p className='mb-0'>Staffs</p>
                             </div>
                         </div>
@@ -54,7 +54,7 @@ function ContentAbout() {
                 </div>
                 <div className="row mt-3">
                     <div className="col-6 d-grid mb-3">
-                        <button type="button" className="btn btn-warning x-btn-class">Large button</button>
+                        <button type="button" className="btn btn-warning x-btn-class">Explore More</button>
                     </div>
 
                 </div>
