@@ -46,7 +46,7 @@ function ContentAbout() {
                         <div className='border rounded p-1'>
                             <div className='border rounded p-4 text-center'>
                                 <i className='fa fa-users fa-2x  mb-2' style={{ color: '#FEA116' }}></i>
-                                <Counter targetValue={9876} />
+                                <Counter targetValue={5648} />
                                 <p className='mb-0'>Clients</p>
                             </div>
                         </div>
