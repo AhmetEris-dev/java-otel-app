@@ -1,5 +1,6 @@
 import React from 'react'
 import { Slide } from 'react-awesome-reveal';
+import img from '../../img/otel-9.jpg'
 
 interface IRoomProps {
     name: string,
@@ -18,7 +19,7 @@ function RoomCard( props: IRoomProps) {
         <>
        
             <div className="card shadow" style={{ border: 'none' }} >
-                <img src="https://www.mutfakhaber.net/img/image_16279903331873622641.jpg" style={{width: 393, height: 250}} className="card-img-top " alt="..." />
+                <img src={img} style={{width: 393, height: 250}} className="card-img-top " alt="..." />
                 <div className="col-4 mt-1">
                     <small className=" start-0 top-100 translate-middle-y text-white rounded py-1 px-3 ms-4" style={{ backgroundColor: '#FEA116' }}>{price}</small>
                 </div>

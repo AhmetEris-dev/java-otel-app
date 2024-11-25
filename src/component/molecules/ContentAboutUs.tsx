@@ -3,6 +3,10 @@ import './ContentAboutUs.css'
 import 'animate.css';
 import Counter from '../atoms/CounterAnimation';
 import { Zoom } from 'react-awesome-reveal';
+import otel1 from '../../img/otel-4.webp'
+import otel2 from '../../img/otel-5.avif'
+import otel3 from '../../img/otel-6.jpg'
+import otel4 from '../../img/otel-7.avif'
 
 function ContentAbout() {
     return (
@@ -59,22 +63,22 @@ function ContentAbout() {
                 <div className="row">
                     <div className="col-6 text-end">
                         <Zoom duration={2000}>
-                            <img src="https://www.bera.com.tr/assets/upload/fotograflar/beraalanyaotel.jpg?h=397" style={{ marginTop: '33%', width: 200, height: 200 }} alt="Zoom Effect" />
+                            <img src={otel1} style={{ marginTop: '33%', width: 200, height: 200 }} alt="Zoom Effect" />
                         </Zoom>
                     </div>
                     <div className="col-6 text-start">
                         <Zoom duration={1000}>
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQd6F9gzKAU4cyYV_4o4AW_4_krsnadUaGHlw&s" style={{width: 300, height: 300}}/>
+                            <img src={otel2} style={{width: 300, height: 300}}/>
                         </Zoom>
                     </div>
                     <div className="col-6 text-end">
                         <Zoom duration={1000}>
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTra42T3nKYFOFhfnIh_fSDFmnWz9shOhH6ag&s" style={{ marginTop: '7%', width: 100, height: 100 }} />
+                            <img src={otel3} style={{ marginTop: '7%', width: 150, height: 150 }} />
                         </Zoom>
                     </div>
                     <div className="col-6 text-start">
                         <Zoom duration={2000}>
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTE9Ocm5V3HyU-Nkk8kRc6bdps4cux9Pn8mvg&s" style={{ marginTop: '7%', width: 250, height: 250 }} />
+                            <img src={otel4} style={{ marginTop: '7%', width: 250, height: 250 }} />
                         </Zoom>
                     </div>
                 </div>

@@ -52,6 +52,9 @@ function BookingContent() {
                                 <option value="1">Room 1</option>
                                 <option value="2">Room 2</option>
                                 <option value="3">Room 3</option>
+                                <option value="3">Room 4</option>
+                                <option value="3">Room 5</option>
+                                <option value="3">Room 6</option>
                             </select>
                         </div>
                         <div className="col-12 mb-3">

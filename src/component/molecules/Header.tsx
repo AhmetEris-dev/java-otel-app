@@ -3,8 +3,9 @@ import './Header.css'
 import HeaderLeftIcons from '../atoms/HeaderLeftIcons'
 import HeaderRightIcons from '../atoms/HeaderRightIcons'
 import HeaderNavbar from '../atoms/HeaderNavbar'
+import { Link } from 'react-router-dom'
 
-interface IHeaderProps{
+interface IHeaderProps {
     page: string
 }
 
@@ -16,7 +17,11 @@ function Header(props: IHeaderProps) {
         <>
             <div className="col-lg-3 bg-dark d-none d-lg-block ">
                 <div className='navbar-x-brand d-flex align-items-center justify-content-center ' >
-                    <h1 className='text-uppercase mt-5' style={{fontWeight: 800}}>Java Hotel</h1>
+                    <Link to="/" className="text-decoration-none">
+                        <h1 className='text-uppercase mt-5' style={{ fontWeight: 800, color: '#FEA116' }}>
+                            Java Hotel
+                        </h1>
+                    </Link>
                 </div>
 
             </div>
@@ -26,12 +31,12 @@ function Header(props: IHeaderProps) {
                         <HeaderLeftIcons />
                     </div>
                     <div className="col-5 text-end">
-                       <HeaderRightIcons />
+                        <HeaderRightIcons />
                     </div>
                 </div>
 
                 <nav className="navbar navbar-expand-lg bg-dark p-3">
-                   <HeaderNavbar page={page} />
+                    <HeaderNavbar page={page} />
                 </nav>
             </div>
 

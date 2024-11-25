@@ -1,11 +1,13 @@
 import React from 'react'
+import img from '../../img/otel-8.jpg'
+import './BookingRoomsImage.css'
 
 function BookingRoomsImage() {
   return (
     <div className='container' style={{position: 'relative'}}>
-   <img className='booking-img' src="https://images.odamax.com/img/1024x768/odamax/image/upload/Limnos_Otel__20240312182227_0.jpg" style={{width: 1272, height: 500}} />
+   <img className='room-img' src={img} style={{width: 1272, height: 500, marginLeft: '12px'}} />
     <div className="row">
-        <h1 className='booking-header' >ROOMS</h1>
+        <h1 className='room-header' >ROOMS</h1>
     </div>
 </div>
   )

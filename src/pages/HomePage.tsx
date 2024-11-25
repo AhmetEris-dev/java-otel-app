@@ -66,7 +66,7 @@ function HomePage() {
           </h6>
           <h1 className='text-center ms-5' style={{ fontWeight: 'bold' }}> Explore Our <span style={{ color: '#FEA116', fontWeight: 'bold' }}>COMMENTS</span> </h1>
         </div>
-        <div className="row  row-section">
+        <div className="row row-section mt-4">
 
 
           <ContentCarouselComment />

@@ -6,7 +6,7 @@ function ContentServices() {
     return (
         <>
             <Slide direction="up" duration={1000}>
-                <div className="row text-center mt-5">
+                <div className="row text-center mt-5 mb-5">
 
                     <h6 style={{ color: '#FEA116' }}> <div className='mb-1 me-1' style={{ width: '50px', display: 'inline-block', borderBottom: '3px solid #FEA116' }} /> OUR SERVİCES
                         <div className='mb-1 ms-2' style={{ width: '50px', display: 'inline-block', borderBottom: '3px solid #FEA116' }} />

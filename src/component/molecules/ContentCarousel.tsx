@@ -1,5 +1,8 @@
 import React from 'react'
 import { JackInTheBox, Zoom } from 'react-awesome-reveal';
+import otel from '../../img/otel-1.jpg';
+import otel2 from '../../img/otel-2.jpg';
+import otel3 from '../../img/otel-3.webp';
 
 function ContentCarousel() {
     return (
@@ -8,13 +11,11 @@ function ContentCarousel() {
                 <div id="carouselExample" className="carousel slide" data-bs-ride="carousel">
                     <div className="carousel-inner">
                         <div className="carousel-item active ">
-                            <img src="https://d3m404n3ahyqc3.cloudfront.net/images/product/1/2/0/2/2/187358/limnos_otel_187358.jpg" className="d-block w-100 h-100" style={{ opacity: 0.5}} />
+                            <img src={otel} className="d-block " style={{width: 1271, height: 700}}  />
                         </div>
+                       
                         <div className="carousel-item">
-                            <img src="https://portnature.com.tr/uploads/blogs/turkiye-ultra-otel-1.webp" className="d-block w-100 h-100" style={{ opacity: 0.5}}/>
-                        </div>
-                        <div className="carousel-item">
-                            <img src="https://www.turizmajansi.com/images/haber/almanlarin-turkiye-de-ter_019c.jpg" className="d-block w-100 h-100" style={{ opacity: 0.5}}/>
+                            <img src={otel3} className="d-block"  style={{width: 1271, height: 700}}/>
                         </div>
                     </div>
                     <button className="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
