@@ -33,7 +33,7 @@ function BookingPage() {
           </div>
         </div>
   
-        {/**About kısmı */}
+        {/**Rezervasyon kısmı */}
         <div className="container" style={{ backgroundColor: 'white' }}>
           <div className="row ms-2">
             <BookingContent />

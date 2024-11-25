@@ -1,7 +1,17 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Fade } from 'react-awesome-reveal';
 
 function ContentCarouselDate() {
+
+    const [checkIn, setCheckIn] = useState('');
+    const [checkOut, setCheckOut] = useState('');
+
+    useEffect(() => {
+        const today = new Date();
+        const formattedDate = today.toISOString().split("T")[0]; 
+        setCheckIn(formattedDate); 
+        setCheckOut(formattedDate);
+    }, []);
 
     return (
         <Fade direction="up" duration={2000} delay={500} triggerOnce>
@@ -11,10 +21,10 @@ function ContentCarouselDate() {
                         <div className="col-10">
                             <div className="row">
                                 <div className="col-md-3">
-                                    <input type="date" className="form-control" />
+                                    <input type="date" value={checkIn} className="form-control" />
                                 </div>
                                 <div className="col-md-3">
-                                    <input type="date" className="form-control" />
+                                    <input type="date" value={checkOut} className="form-control" />
                                 </div>
                                 <div className="col-md-3">
                                     <select className="form-select" aria-label="Default select example">

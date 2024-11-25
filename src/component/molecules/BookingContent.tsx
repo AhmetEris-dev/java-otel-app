@@ -1,8 +1,53 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Zoom } from 'react-awesome-reveal'
 import Counter from '../atoms/CounterAnimation'
+import { useDispatch } from 'react-redux'
+import { JavaOtelDispatch } from '../../store'
+import { fetchAddReservation } from '../../store/feature/reservationSlice'
+import { IRoomRequest } from '../../models/IRoomRequest'
+
+
 
 function BookingContent() {
+
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [checkIn, setCheckIn] = useState('');
+    const [checkOut, setCheckOut] = useState('');
+    const [adult, setAdult] = useState('0');
+    const [child, setChild] = useState('0');
+    const [room, setRoom] = useState('0');
+    const [description, setDescription] = useState('');
+
+    const dispatch = useDispatch<JavaOtelDispatch>();
+
+    const createReservation = () => {
+
+        const reservation: IRoomRequest = {
+            customerName: name,
+            customerEmail: email,
+            checkInDate: checkIn,
+            checkOutDate: checkOut,
+            adultCount: parseInt(adult),
+            childCount: parseInt(child),
+            roomId: parseInt(room),
+            description: description
+        }
+
+
+        dispatch(fetchAddReservation(reservation))
+
+
+    }
+
+    useEffect(() => {
+        const today = new Date();
+        const formattedDate = today.toISOString().split("T")[0]; 
+        setCheckIn(formattedDate); 
+        setCheckOut(formattedDate);
+    }, []);
+
+
     return (
         <div className='row'>
             <div className="row">
@@ -19,19 +64,19 @@ function BookingContent() {
                 <div className="col-6">
                     <div className="row mt-5">
                         <div className="col-lg-6 mb-3">
-                            <input type="text" className='form-control' style={{height: '60px', borderColor: 'black'}} placeholder='Your Name' />
+                            <input type="text" onChange={evt => { setName(evt.target.value) }} className='form-control' style={{ height: '60px', borderColor: 'black' }} placeholder='Your Name' />
                         </div>
                         <div className="col-lg-6 mb-3">
-                            <input type="email" className='form-control' style={{height: '60px', borderColor: 'black'}} placeholder='Your Email' />
+                            <input type="email" onChange={evt => { setEmail(evt.target.value) }} className='form-control' style={{ height: '60px', borderColor: 'black' }} placeholder='Your Email' />
                         </div>
                         <div className="col-lg-6">
-                            <input type="date" className='form-control' style={{height: '60px', borderColor: 'black'}} placeholder='Check In' />
+                            <input type="date" value={checkIn} onChange={evt => { setCheckIn(evt.target.value) }} className='form-control' style={{ height: '60px', borderColor: 'black' }} placeholder='Check In' />
                         </div>
                         <div className="col-lg-6 mb-3">
-                            <input type="date" className='form-control' style={{height: '60px', borderColor: 'black'}} placeholder='Check In' />
+                            <input type="date" value={checkOut} onChange={evt => { setCheckOut(evt.target.value) }} className='form-control' style={{ height: '60px', borderColor: 'black' }} placeholder='Check Out' />
                         </div>
                         <div className="col-lg-6">
-                            <select className="form-select" style={{height: '60px', borderColor: 'black'}} aria-label="Default select example">
+                            <select className="form-select" onChange={(evt) => setAdult(evt.target.value)} style={{ height: '60px', borderColor: 'black' }} aria-label="Default select example">
                                 <option selected>Adult</option>
                                 <option value="1">Adult 1</option>
                                 <option value="2">Adult 2</option>
@@ -39,15 +84,15 @@ function BookingContent() {
                             </select>
                         </div>
                         <div className="col-lg-6 mb-3">
-                            <select className="form-select" style={{height: '60px', borderColor: 'black'}} aria-label="Default select example">
+                            <select className="form-select" onChange={evt => { setChild(evt.target.value) }} style={{ height: '60px', borderColor: 'black' }} aria-label="Default select example">
                                 <option selected>Child</option>
                                 <option value="1">Child 1</option>
                                 <option value="2">Child 2</option>
                                 <option value="3">Child 3</option>
                             </select>
                         </div>
-                        <div className="col-12 mb-3"> 
-                            <select className="form-select" style={{height: '60px', borderColor: 'black'}} aria-label="Default select example">
+                        <div className="col-12 mb-3">
+                            <select className="form-select" onChange={evt => { setRoom(evt.target.value) }} style={{ height: '60px', borderColor: 'black' }} aria-label="Default select example">
                                 <option selected>Room</option>
                                 <option value="1">Room 1</option>
                                 <option value="2">Room 2</option>
@@ -58,10 +103,10 @@ function BookingContent() {
                             </select>
                         </div>
                         <div className="col-12 mb-3">
-                            <textarea className='form-control'  placeholder='Special Request' style={{height: '100px', borderColor: 'black'}}></textarea>
+                            <textarea className='form-control' onChange={evt => { setDescription(evt.target.value) }} placeholder='Special Request' style={{ height: '100px', borderColor: 'black' }}></textarea>
                         </div>
                         <div className="col-12 d-grid">
-                            <button className='btn btn-warning' style={{backgroundColor: '#FEA116', color: 'white', height: '60px'}}>BOOK NOW</button>
+                            <button className='btn btn-warning' onClick={createReservation} style={{ backgroundColor: '#FEA116', color: 'white', height: '60px' }}>BOOK NOW</button>
                         </div>
 
 
@@ -76,7 +121,7 @@ function BookingContent() {
                         </div>
                         <div className="col-6 text-start">
                             <Zoom duration={1000}>
-                                <img src="https://www.kayak.com.tr/rimg/himg/e2/3b/98/expediav2-305453-b4227c-563368.jpg?width=968&height=607&crop=true"  style={{width: 300, height: 300}}/>
+                                <img src="https://www.kayak.com.tr/rimg/himg/e2/3b/98/expediav2-305453-b4227c-563368.jpg?width=968&height=607&crop=true" style={{ width: 300, height: 300 }} />
                             </Zoom>
                         </div>
                         <div className="col-6 text-end">
