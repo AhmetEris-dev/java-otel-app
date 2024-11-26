@@ -4,7 +4,7 @@ import Counter from '../atoms/CounterAnimation'
 import { useDispatch } from 'react-redux'
 import { JavaOtelDispatch } from '../../store'
 import { fetchAddReservation } from '../../store/feature/reservationSlice'
-import { IRoomRequest } from '../../models/IRoomRequest'
+import { IReservationRequest } from '../../models/IReservationRequest'
 
 
 
@@ -23,7 +23,7 @@ function BookingContent() {
 
     const createReservation = () => {
 
-        const reservation: IRoomRequest = {
+        const reservation: IReservationRequest = {
             customerName: name,
             customerEmail: email,
             checkInDate: checkIn,

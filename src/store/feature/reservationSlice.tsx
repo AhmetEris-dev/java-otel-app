@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit"
-import { IRoomRequest } from "../../models/IRoomRequest"
+import { IReservationRequest } from "../../models/IReservationRequest"
 import { IBaseResponse } from "../../models/IBaseResponse"
 import apis from "../../constant/RestApis"
 import swal from 'sweetalert'
@@ -10,7 +10,7 @@ const initialReservationState = {
 
 export const fetchAddReservation = createAsyncThunk(
     'post/fetchAddReservation',
-    async(payload: IRoomRequest) => {
+    async(payload: IReservationRequest) => {
         return await fetch(apis.reservationService + '/add-Reservation', {
             method: 'POST',
             headers: {
@@ -22,7 +22,7 @@ export const fetchAddReservation = createAsyncThunk(
 )
 
 const reservationSlice = createSlice({
-    name: 'post',
+    name: 'reservation',
     initialState: initialReservationState,
     reducers: {},
     extraReducers: (build) => {
