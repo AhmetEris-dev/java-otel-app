@@ -6,6 +6,7 @@ import { data } from "jquery"
 import state from "sweetalert/typings/modules/state"
 import { IRoomResponse } from "../../models/IRoomResponse"
 import { IRoomUpdateRequest } from "../../models/IRoomUpdateRequest"
+import { IRoomDeleteRequest } from "../../models/IRoomDeleteRequest"
 
 
 
@@ -13,18 +14,22 @@ interface IRoomState {
     roomList: IRoomResponse[]
     isLoadingRoomList: boolean,
     isNewRoomLoading: boolean,
-    isLoadingUpdateRoomList: boolean
+    isLoadingUpdateRoomList: boolean,
+    isRoomDeleteLoading: boolean
 }
 
 const initialRoomState: IRoomState = {
     roomList: [],
     isLoadingRoomList: false,
     isNewRoomLoading: false,
-    isLoadingUpdateRoomList: false
+    isLoadingUpdateRoomList: false,
+    isRoomDeleteLoading: false
 }
 
 
 //fetch
+
+//yeni oda ekleme
 export const fetchNewRooms = createAsyncThunk(
     'room/fetchNewRooms',
     async(payload: IRoomRequest) => {
@@ -38,6 +43,7 @@ export const fetchNewRooms = createAsyncThunk(
     }
 )
 
+//Tüm odaları listeler
 export const fetchGetAllRooms = createAsyncThunk(
     'room/fetchGetAllRooms',
     async() => {
@@ -45,6 +51,7 @@ export const fetchGetAllRooms = createAsyncThunk(
     }
 )
 
+//Oda güncelleme
 export const fetchUpdateRooms = createAsyncThunk(
     'room/fetchUpdateRooms',
     async(payload: IRoomUpdateRequest) => {
@@ -57,6 +64,24 @@ export const fetchUpdateRooms = createAsyncThunk(
         }).then(data => data.json())
     }
 )
+
+
+//Oda silme
+export const fetchDeleteRooms = createAsyncThunk(
+    'room/fetchDeleteRooms',
+    async(id: number) => {
+        console.log(id);
+        
+        return await fetch(apis.roomService + '/room-delete', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({'id': id})
+        }).then(data => data.json())
+    }
+)
+
 
 const roomSlice = createSlice({
     name: 'room',
@@ -85,6 +110,12 @@ const roomSlice = createSlice({
         })
         build.addCase(fetchUpdateRooms.fulfilled, (state) => {
             state.isLoadingUpdateRoomList = false
+        })
+        build.addCase(fetchDeleteRooms.pending, (state) => {
+            state.isRoomDeleteLoading = true
+        })
+        build.addCase(fetchDeleteRooms.fulfilled, (state, action) => {
+            state.isRoomDeleteLoading = false
         })
     }
 })

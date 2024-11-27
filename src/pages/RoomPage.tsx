@@ -3,18 +3,24 @@ import NavbarMenu from '../component/molecules/NavbarMenu'
 import SideBarMenu from '../component/molecules/SideBarMenu'
 import { JavaOtelDispatch, OtelUseSelector } from '../store'
 import { useDispatch } from 'react-redux';
-import { fetchGetAllRooms, fetchNewRooms, fetchUpdateRooms } from '../store/feature/roomSlice';
+import { fetchDeleteRooms, fetchGetAllRooms, fetchNewRooms, fetchUpdateRooms } from '../store/feature/roomSlice';
 import { IRoomRequest } from '../models/IRoomRequest';
 import swal from 'sweetalert'
 import { IRoomResponse } from '../models/IRoomResponse';
 import { IRoomUpdateRequest } from '../models/IRoomUpdateRequest';
+import { IRoomDeleteRequest } from '../models/IRoomDeleteRequest';
+import './RoomPage.css'
+
+interface IRoomPage {
+    buttons: boolean
+}
 
 function RoomPage() {
 
     const [roomType, setRoomType] = useState('');
     const [roomStatus, setRoomStatus] = useState('');
     const [editRoom, setEditRoom] = useState<IRoomResponse | null>(null);
- 
+
     const roomList = OtelUseSelector(state => state.room.roomList);
     const dispatch = useDispatch<JavaOtelDispatch>();
 
@@ -47,6 +53,38 @@ function RoomPage() {
             swal('Başarılı', 'Oda güncelleme işlemi başarılı...', 'success');
         })
 
+    }
+
+    const deleteRoom = (id: number) => {
+
+        swal({
+            title: "Silmek istiyor musunuz?",
+            icon: "warning",
+            buttons: {
+              cancel: {
+                text: 'Hayır',
+                value: false,
+                visible: true,
+                className: 'swal-button-cancel' // Özel sınıf
+              },
+              confirm: {
+                text: 'Evet',
+                value: true,
+                visible: true,
+                className: 'swal-button-confirm' // Özel sınıf
+              },
+            }
+          })
+          .then((willDelete) => {
+            if (willDelete) {
+              dispatch(fetchDeleteRooms(id)).then(data => {
+                dispatch(fetchGetAllRooms());
+              });
+              swal("Kaydınız başarılı şekilde silindi!", { icon: "success" });
+            } else {
+              swal("Kayıt silme işleminiz iptal edildi!");
+            }
+          });
     }
 
     return (
@@ -127,7 +165,7 @@ function RoomPage() {
 
                                                 {
                                                     roomList.map((room, index) => {
-                                                        
+
                                                         return (
                                                             <tr key={index}>
                                                                 <td>{room.id}</td>
@@ -142,7 +180,7 @@ function RoomPage() {
                                                                     </button>
 
 
-                                                                    <button className='btn btn-danger ms-2'>
+                                                                    <button className='btn btn-danger ms-2' onClick={() => deleteRoom(room.id)}>
                                                                         <i className="fa-solid fa-trash"></i>
                                                                     </button>
                                                                 </td>
