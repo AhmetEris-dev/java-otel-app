@@ -16,7 +16,7 @@ function SideBarMenu() {
 
                 <div className="user-panel mt-3 pb-3 mb-3 d-flex">
                     <div className="image">
-                        <img src="dist/img/user2-160x160.jpg" className="img-circle elevation-2" alt="User Image" />
+                        <img src="/dist/img/user2-160x160.jpg" className="img-circle elevation-2" alt="User Image" />
                     </div>
                     <div className="info">
                         <a href="#" className="d-block">Alexander Pierce</a>
@@ -31,7 +31,7 @@ function SideBarMenu() {
                     <ul className="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
 
                         <li className="nav-item ">
-                            <NavLink to={'/room'} className="nav-link">
+                            <NavLink to={'/admin/room'} className="nav-link">
                                 <i className="fa-solid fa-house ms-1"></i>
                                 <p className='ms-2'>
                                     Odalar
@@ -39,12 +39,12 @@ function SideBarMenu() {
                             </NavLink>
                         </li>
                         <li className="nav-item">
-                            <a href="#" className="nav-link ">
+                            <NavLink to={'/admin/reservation'} className="nav-link ">
                                 <i className="fa-solid fa-clipboard-list ms-1"></i>
                                 <p className='ms-2'>
                                     Rezervasyon Listesi
                                 </p>
-                            </a>
+                            </NavLink>
                         </li>
                     </ul>
                 </nav>

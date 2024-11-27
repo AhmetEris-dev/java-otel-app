@@ -3,13 +3,22 @@ import { IReservationRequest } from "../../models/IReservationRequest"
 import { IBaseResponse } from "../../models/IBaseResponse"
 import apis from "../../constant/RestApis"
 import swal from 'sweetalert'
+import { IReservationResponse } from "../../models/IReservationResponse"
 
-const initialReservationState = {
-    isNewReservationLoading: false
+interface IReservationState {
+    reservationList: IReservationResponse[],
+    isLoadingReservationList: boolean
 }
 
+const initialReservationState: IReservationState = {
+    reservationList: [],
+    isLoadingReservationList: false
+
+}
+
+//rezervasyon ekleme
 export const fetchAddReservation = createAsyncThunk(
-    'post/fetchAddReservation',
+    'reservation/fetchAddReservation',
     async(payload: IReservationRequest) => {
         return await fetch(apis.reservationService + '/add-Reservation', {
             method: 'POST',
@@ -21,23 +30,28 @@ export const fetchAddReservation = createAsyncThunk(
     }
 )
 
+//rezervasyon listeleme
+export const fetchGetAllReservation = createAsyncThunk(
+    'reservation/fetchGetAllReservation',
+    async() => {
+        return await fetch(apis.reservationService + '/reservation-list').then(data => data.json())
+    }
+)
+
+
+
 const reservationSlice = createSlice({
     name: 'reservation',
     initialState: initialReservationState,
     reducers: {},
     extraReducers: (build) => {
-        build.addCase(fetchAddReservation.pending, (state) => {
-            state.isNewReservationLoading = true
+        build.addCase(fetchGetAllReservation.pending, (state) => {
+            state.isLoadingReservationList = true
         })
-        build.addCase(fetchAddReservation.fulfilled, (state, action: PayloadAction<IBaseResponse>) => {
-            state.isNewReservationLoading = false;
-
-            if(action.payload.code === 200) {
-                swal('Başarılı','Rezervasyon işleminiz başarıyla gerçekleşmiştir.', 'success');
-            }
-            else{
-                swal('Hata! ', action.payload.message, 'error'); 
-            }
+        build.addCase(fetchGetAllReservation.fulfilled, (state, action: PayloadAction<IBaseResponse>) => {
+            state.isLoadingReservationList = false;
+            if(action.payload.code === 200)
+                state.reservationList = action.payload.data
         })
     }
 })

@@ -11,9 +11,7 @@ import { IRoomUpdateRequest } from '../models/IRoomUpdateRequest';
 import { IRoomDeleteRequest } from '../models/IRoomDeleteRequest';
 import './RoomPage.css'
 
-interface IRoomPage {
-    buttons: boolean
-}
+
 
 function RoomPage() {
 
@@ -61,30 +59,30 @@ function RoomPage() {
             title: "Silmek istiyor musunuz?",
             icon: "warning",
             buttons: {
-              cancel: {
-                text: 'Hayır',
-                value: false,
-                visible: true,
-                className: 'swal-button-cancel' // Özel sınıf
-              },
-              confirm: {
-                text: 'Evet',
-                value: true,
-                visible: true,
-                className: 'swal-button-confirm' // Özel sınıf
-              },
+                cancel: {
+                    text: 'Hayır',
+                    value: false,
+                    visible: true,
+                    className: 'swal-button-cancel' // Özel sınıf
+                },
+                confirm: {
+                    text: 'Evet',
+                    value: true,
+                    visible: true,
+                    className: 'swal-button-confirm' // Özel sınıf
+                },
             }
-          })
-          .then((willDelete) => {
-            if (willDelete) {
-              dispatch(fetchDeleteRooms(id)).then(data => {
-                dispatch(fetchGetAllRooms());
-              });
-              swal("Kaydınız başarılı şekilde silindi!", { icon: "success" });
-            } else {
-              swal("Kayıt silme işleminiz iptal edildi!");
-            }
-          });
+        })
+            .then((willDelete) => {
+                if (willDelete) {
+                    dispatch(fetchDeleteRooms(id)).then(data => {
+                        dispatch(fetchGetAllRooms());
+                    });
+                    swal("Kaydınız başarılı şekilde silindi!", { icon: "success" });
+                } else {
+                    swal("Kayıt silme işleminiz iptal edildi!");
+                }
+            });
     }
 
     return (
@@ -106,53 +104,27 @@ function RoomPage() {
 
                 <section className="content">
                     <div className="container-fluid">
-                        <div className="row">
-                            <div className="col-12 text-end mt-2 me-3" >
-                                <button type="button" className="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                    Oda Ekle
-                                </button>
-                            </div>
-
-                            <div className="modal fade" id="exampleModal" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                <div className="modal-dialog">
-                                    <div className="modal-content">
-                                        <div className="modal-header">
-                                            <h1 className="modal-title fs-5" id="exampleModalLabel">Oda Ekleme İşlemleri</h1>
-                                            <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                        </div>
-                                        <div className="modal-body">
-                                            <select className="form-select" onChange={evt => (setRoomType(evt.target.value))} style={{ height: '60px' }} aria-label="Default select example">
-                                                <option selected>Room Type</option>
-                                                <option value="JUNIOR_SUITE">JUNIOR_SUITE</option>
-                                                <option value="EXECUTIVE_SUITE">EXECUTIVE_SUITE</option>
-                                                <option value="SUPER_DELUXE">SUPER_DELUXE</option>
-                                            </select>
-
-                                        </div>
-                                        <div className="modal-footer">
-                                            <button type="button" className="btn btn-primary" data-bs-dismiss="modal" onClick={createRoom} >Kaydet</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
 
 
-                        </div>
+
+
                         <div className="row mt-3">
                             <div className="col-12">
                                 <div className="card">
                                     <div className="card-header">
-                                        <h3 className="card-title">Responsive Hover Table</h3>
+                                        <h3 className="card-title">Oda Listesi</h3>
 
                                         <div className="card-tools">
                                             <div className="input-group input-group-sm" style={{ width: '150px' }}>
-
+                                                <button type="button" className="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                                    Oda Ekle
+                                                </button>
                                             </div>
                                         </div>
                                     </div>
 
                                     <div className="card-body table-responsive p-0">
-                                        <table id="example1" className="table table-hover text-nowrap">
+                                        <table id="example1" className="table table-hover text-nowrap text-center">
                                             <thead>
                                                 <tr>
                                                     <th>ID</th>
@@ -223,6 +195,30 @@ function RoomPage() {
                         </div>
                         <div className="modal-footer">
                             <button type="button" className="btn btn-primary" data-bs-dismiss="modal" onClick={updateRoom}>Kaydet</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div className="modal fade" id="exampleModal" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div className="modal-dialog">
+                    <div className="modal-content">
+                        <div className="modal-header">
+                            <h1 className="modal-title fs-5" id="exampleModalLabel">Oda Ekleme İşlemleri</h1>
+                            <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div className="modal-body">
+                            <select className="form-select" onChange={evt => (setRoomType(evt.target.value))} style={{ height: '60px' }} aria-label="Default select example">
+                                <option selected>Room Type</option>
+                                <option value="JUNIOR_SUITE">JUNIOR_SUITE</option>
+                                <option value="EXECUTIVE_SUITE">EXECUTIVE_SUITE</option>
+                                <option value="SUPER_DELUXE">SUPER_DELUXE</option>
+                            </select>
+
+                        </div>
+                        <div className="modal-footer">
+                            <button type="button" className="btn btn-primary" data-bs-dismiss="modal" onClick={createRoom} >Kaydet</button>
                         </div>
                     </div>
                 </div>

@@ -39,7 +39,7 @@ function RoomsContent() {
 
       <div className="container" style={{ backgroundColor: 'white' }}>
         <div className="row" style={{ height: '50px' }}>
-
+            
         </div>
       </div>
 

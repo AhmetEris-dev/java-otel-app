@@ -6,6 +6,7 @@ import BookingRooms from './pages/RoomsContent'
 import RoomsContent from './pages/RoomsContent'
 import AdminPage from './pages/AdminPage'
 import RoomPage from './pages/RoomPage'
+import ReservationPage from './pages/ReservationPage'
 
 function RouterPage() {
   return (
@@ -13,7 +14,8 @@ function RouterPage() {
         <Routes>
             <Route path='/' element={<HomePage />} />
             <Route path='/admin' element={<AdminPage />} />
-            <Route path='/room' element={<RoomPage />} />
+            <Route path='/admin/room' element={<RoomPage />} />
+            <Route path='/admin/reservation' element={<ReservationPage />} />
             <Route path='/booking' element={<BookingPage />} />
             <Route path='/rooms' element={<RoomsContent />} />
         </Routes>
