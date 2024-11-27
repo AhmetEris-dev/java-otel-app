@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux'
 import { JavaOtelDispatch } from '../../store'
 import { fetchAddReservation } from '../../store/feature/reservationSlice'
 import { IReservationRequest } from '../../models/IReservationRequest'
-
+import swal from 'sweetalert'
 
 
 function BookingContent() {
@@ -35,7 +35,9 @@ function BookingContent() {
         }
 
 
-        dispatch(fetchAddReservation(reservation))
+        dispatch(fetchAddReservation(reservation)).then(data => {
+            swal('Başarılı!', 'Rezervasyon işleminiz başarıyla gerçekleşmiştir.','success');
+        })
 
 
     }

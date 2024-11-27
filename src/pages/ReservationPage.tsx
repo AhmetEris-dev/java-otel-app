@@ -3,8 +3,11 @@ import NavbarMenu from '../component/molecules/NavbarMenu'
 import SideBarMenu from '../component/molecules/SideBarMenu'
 import { JavaOtelDispatch, OtelUseSelector } from '../store'
 import { useDispatch } from 'react-redux';
-import { fetchGetAllReservation } from '../store/feature/reservationSlice';
+import { fetchDeleteReservation, fetchGetAllReservation, fetchUpdateReservation } from '../store/feature/reservationSlice';
 import { IReservationResponse } from '../models/IReservationResponse';
+import { IReservationUpdateRequest } from '../models/IReservationUpdateRequest';
+import swal from 'sweetalert'
+import './ReservationPage.css'
 
 function ReservationPage() {
 
@@ -24,12 +27,52 @@ function ReservationPage() {
     }, [])
 
     const updateReservation = () => {
-        console.log(roomId);
-        console.log(adultCount);
-        console.log(childCount);
-        console.log(checkInDate);
-        console.log(checkOutDate);
-        
+
+        const updatereservation: IReservationUpdateRequest = {
+            id: editReservation?.id,
+            roomId: roomId,
+            adultCount: adultCount,
+            childCount: childCount,
+            checkInDate: checkInDate,
+            checkOutDate: checkOutDate
+        }
+
+        dispatch(fetchUpdateReservation(updatereservation)).then(data => {
+            dispatch(fetchGetAllReservation());
+
+        })
+    }
+
+    const deleteReservation = (id: number) => {
+
+        swal({
+            title: "Silmek istiyor musunuz?",
+            icon: "warning",
+            buttons: {
+                cancel: {
+                    text: 'Hayır',
+                    value: false,
+                    visible: true,
+                    className: 'swal-button-cancel'
+                },
+                confirm: {
+                    text: 'Evet',
+                    value: true,
+                    visible: true,
+                    className: 'swal-button-confirm'
+                },
+            }
+        })
+            .then((willDelete) => {
+                if (willDelete) {
+                    dispatch(fetchDeleteReservation(id)).then(data => {
+                        dispatch(fetchGetAllReservation());
+                    });
+                    swal("Kaydınız başarılı şekilde silindi!", { icon: "success" });
+                } else {
+                    swal("Kayıt silme işleminiz iptal edildi!");
+                }
+            });
     }
 
     return (
@@ -93,7 +136,7 @@ function ReservationPage() {
                                                                 <td>{reservation.checkOutDate}</td>
                                                                 <td>
                                                                     <button className='btn btn-success' data-bs-toggle="modal" data-bs-target="#exampleModal2" onClick={() => {
-                                                                        
+
                                                                         setEditReservation(reservationList[index]);
                                                                         setRoomId(reservationList[index].roomId);
                                                                         setAdultCount(reservationList[index].adultCount);
@@ -104,10 +147,8 @@ function ReservationPage() {
                                                                         <i className="fa-solid fa-pen"></i>
                                                                     </button>
 
-                                                                    <button className='btn btn-danger ms-2' data-bs-toggle="modal" data-bs-target="#exampleModal2" onClick={() => {
-
-                                                                    }}>
-                                                                        <i className="fa-solid fa-trash"></i>
+                                                                    <button className='btn btn-danger ms-2' onClick={() => deleteReservation(reservation.id)}>
+                                                                        <i className="fa-solid fa-trash" ></i>
                                                                     </button>
                                                                 </td>
                                                             </tr>
@@ -132,20 +173,20 @@ function ReservationPage() {
                 <div className="modal-dialog">
                     <div className="modal-content">
                         <div className="modal-header">
-                            <h1 className="modal-title fs-5" id="exampleModalLabel">Rezervasyon Güncelleme İşlemleri</h1>
+                            <h1 className="modal-title fs-5" id="exampleModalLabel">Rezervasyon Güncelleme</h1>
                             <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div className="modal-body">
                             <label className='form-label'>Oda No</label>
-                            <input type="text" className='form-control mb-2' onChange={evt => {setRoomId(parseInt(evt.target.value))}} value={roomId ? roomId: 0}/>
+                            <input type="text" className='form-control mb-2' onChange={evt => { setRoomId(parseInt(evt.target.value)) }} value={roomId ? roomId : 0} />
                             <label className='form-label'>Yetişkin Sayısı</label>
-                            <input type="text" className='form-control mb-2' onChange={evt => {setAdultCount(evt.target.value)}} value={adultCount}/>
+                            <input type="text" className='form-control mb-2' onChange={evt => { setAdultCount(evt.target.value) }} value={adultCount} />
                             <label className='form-label'>Çocuk Sayısı</label>
-                            <input type="text" className='form-control mb-2' onChange={evt => {setChildCount(evt.target.value)}} value={childCount}/>
+                            <input type="text" className='form-control mb-2' onChange={evt => { setChildCount(evt.target.value) }} value={childCount} />
                             <label className='form-label'>Giriş Tarihi</label>
-                            <input type="date" className='form-control mb-2' onChange={evt => {setCheckInDate(evt.target.value)}} value={checkInDate}/>
+                            <input type="date" className='form-control mb-2' onChange={evt => { setCheckInDate(evt.target.value) }} value={checkInDate} />
                             <label className='form-label'>Çıkış Tarihi</label>
-                            <input type="date" className='form-control mb-2' onChange={evt => {setCheckOutDate(evt.target.value)}} value={checkOutDate}/>
+                            <input type="date" className='form-control mb-2' onChange={evt => { setCheckOutDate(evt.target.value) }} value={checkOutDate} />
 
                         </div>
                         <div className="modal-footer">

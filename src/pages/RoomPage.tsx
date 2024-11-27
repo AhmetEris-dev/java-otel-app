@@ -63,13 +63,13 @@ function RoomPage() {
                     text: 'Hayır',
                     value: false,
                     visible: true,
-                    className: 'swal-button-cancel' // Özel sınıf
+                    className: 'swal-button-cancel' 
                 },
                 confirm: {
                     text: 'Evet',
                     value: true,
                     visible: true,
-                    className: 'swal-button-confirm' // Özel sınıf
+                    className: 'swal-button-confirm' 
                 },
             }
         })
@@ -105,18 +105,15 @@ function RoomPage() {
                 <section className="content">
                     <div className="container-fluid">
 
-
-
-
                         <div className="row mt-3">
                             <div className="col-12">
                                 <div className="card">
-                                    <div className="card-header">
-                                        <h3 className="card-title">Oda Listesi</h3>
+                                    <div className="card-header ">
+                                        <h3 className="card-title mt-3">Oda Listesi</h3>
 
                                         <div className="card-tools">
-                                            <div className="input-group input-group-sm" style={{ width: '150px' }}>
-                                                <button type="button" className="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                            <div className="input-group input-group-sm">
+                                                <button type="button" className="btn btn-success m-1" style={{height: '50px', width: '120px', fontSize: '18px'}} data-bs-toggle="modal" data-bs-target="#exampleModal">
                                                     Oda Ekle
                                                 </button>
                                             </div>
@@ -183,7 +180,7 @@ function RoomPage() {
                 <div className="modal-dialog">
                     <div className="modal-content">
                         <div className="modal-header">
-                            <h1 className="modal-title fs-5" id="exampleModalLabel">Oda Güncelleme İşlemleri</h1>
+                            <h1 className="modal-title fs-5" id="exampleModalLabel">Oda Güncelleme</h1>
                             <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div className="modal-body">
@@ -205,7 +202,7 @@ function RoomPage() {
                 <div className="modal-dialog">
                     <div className="modal-content">
                         <div className="modal-header">
-                            <h1 className="modal-title fs-5" id="exampleModalLabel">Oda Ekleme İşlemleri</h1>
+                            <h1 className="modal-title fs-5" id="exampleModalLabel">Oda Ekleme</h1>
                             <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div className="modal-body">

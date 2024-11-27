@@ -2,14 +2,15 @@ import React from 'react'
 import room from '../../pages/RoomPage'
 import { NavLink } from 'react-router-dom'
 import logo from '../../img/logo.jpg'
+import './SideBarMenu.css'
 
 function SideBarMenu() {
     return (
         <>
-            <a href="index3.html" className="brand-link">
-                <img src={logo} alt="AdminLTE Logo" className="brand-image img-circle elevation-3" style={{ opacity: .8 }} />
-                <span className="brand-text font-weight-light">AdminLTE 3</span>
-            </a>
+            <NavLink to={'/admin'}  className="brand-link">
+                <img src={logo} alt="AdminLTE Logo"  className="brand-image img-circle elevation-3 text-center" style={{ opacity: .8}} />
+                <span className="brand-text font-weight-light" >Admin Paneli</span>
+            </NavLink>
 
 
             <div className="sidebar">
