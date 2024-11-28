@@ -21,7 +21,7 @@ function RoomCard( props: IRoomProps) {
             <div className="card shadow" style={{ border: 'none' }} >
                 <img src={img} style={{width: 393, height: 250}} className="card-img-top " alt="..." />
                 <div className="col-4 mt-1">
-                    <small className=" start-0 top-100 translate-middle-y text-white rounded py-1 px-3 ms-4" style={{ backgroundColor: '#FEA116' }}>{price}</small>
+                    <small className=" start-0 top-100 translate-middle-y text-white rounded py-1 px-3" style={{ backgroundColor: '#FEA116' }}>{price}</small>
                 </div>
                 <div className="p-4 mt-2">
                     <div className='d-flex justify-content-between mb-3'>
