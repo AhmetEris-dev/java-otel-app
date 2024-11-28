@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import NavbarMenu from '../component/molecules/NavbarMenu'
-import SideBarMenu from '../component/molecules/SideBarMenu'
-import { JavaOtelDispatch, OtelUseSelector } from '../store'
+import NavbarMenu from '../../component/molecules/NavbarMenu'
+import SideBarMenu from '../../component/molecules/Admin/SideBarMenu'
+import { JavaOtelDispatch, OtelUseSelector } from '../../store'
 import { useDispatch } from 'react-redux';
-import { fetchDeleteReservation, fetchGetAllReservation, fetchUpdateReservation } from '../store/feature/reservationSlice';
-import { IReservationResponse } from '../models/IReservationResponse';
-import { IReservationUpdateRequest } from '../models/IReservationUpdateRequest';
+import { fetchDeleteReservation, fetchGetAllReservation, fetchUpdateReservation } from '../../store/feature/reservationSlice';
+import { IReservationResponse } from '../../models/IReservationResponse';
+import { IReservationUpdateRequest } from '../../models/IReservationUpdateRequest';
 import swal from 'sweetalert'
 import './ReservationPage.css'
 

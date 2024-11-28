@@ -3,8 +3,8 @@ import logo from '../../img/logo.jpg'
 import FullCalendar from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import './DashboardContent.css'
-import WeeklyReservations from '../molecules/WeeklyReservations';
-import Calendar from '../molecules/NewCalendar';
+import WeeklyReservations from '../molecules/Admin/WeeklyReservations';
+import Calendar from '../molecules/Admin/NewCalendar';
 
 function DashboardContent() {
     return (

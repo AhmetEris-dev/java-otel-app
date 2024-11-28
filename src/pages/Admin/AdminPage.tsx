@@ -1,8 +1,8 @@
 import React from 'react'
-import NavbarMenu from '../component/molecules/NavbarMenu'
-import SideBarMenu from '../component/molecules/SideBarMenu'
-import ReservationPage from './ReservationPage'
-import DashboardContent from '../component/organisms/DashboardContent'
+import NavbarMenu from '../../component/molecules/NavbarMenu'
+import SideBarMenu from '../../component/molecules/Admin/SideBarMenu'
+import ReservationPage from '../Admin/ReservationPage'
+import DashboardContent from '../../component/organisms/DashboardContent'
 
 function AdminPage() {
     return (

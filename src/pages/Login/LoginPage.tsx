@@ -3,10 +3,10 @@ import swal from 'sweetalert'
 import './LoginPage.css'
 import { NavLink, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { JavaOtelDispatch } from '../store';
-import { fetchLogin } from '../store/feature/authSlice';
-import { fetchGetProfileByToken } from '../store/feature/adminSlice';
-import logo from '../img/logo.jpg'
+import { JavaOtelDispatch } from '../../store';
+import { fetchLogin } from '../../store/feature/authSlice';
+import { fetchGetProfileByToken } from '../../store/feature/adminSlice';
+import logo from '../../img/logo-new.webp'
 
 function Login() {
     document.body.style.backgroundColor = 'white';

@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react'
-import NavbarMenu from '../component/molecules/NavbarMenu'
-import SideBarMenu from '../component/molecules/SideBarMenu'
-import { JavaOtelDispatch, OtelUseSelector } from '../store'
+import NavbarMenu from '../../component/molecules/NavbarMenu'
+import SideBarMenu from '../../component/molecules/Admin/SideBarMenu'
+import { JavaOtelDispatch, OtelUseSelector } from '../../store'
 import { useDispatch } from 'react-redux';
-import { fetchDeleteRooms, fetchGetAllRooms, fetchNewRooms, fetchUpdateRooms } from '../store/feature/roomSlice';
-import { IRoomRequest } from '../models/IRoomRequest';
+import { fetchDeleteRooms, fetchGetAllRooms, fetchNewRooms, fetchUpdateRooms } from '../../store/feature/roomSlice';
+import { IRoomRequest } from '../../models/IRoomRequest';
 import swal from 'sweetalert'
-import { IRoomResponse } from '../models/IRoomResponse';
-import { IRoomUpdateRequest } from '../models/IRoomUpdateRequest';
-import { IRoomDeleteRequest } from '../models/IRoomDeleteRequest';
+import { IRoomResponse } from '../../models/IRoomResponse';
+import { IRoomUpdateRequest } from '../../models/IRoomUpdateRequest';
+import { IRoomDeleteRequest } from '../../models/IRoomDeleteRequest';
 import './RoomPage.css'
 
 
