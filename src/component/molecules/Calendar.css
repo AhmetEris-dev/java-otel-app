@@ -1,0 +1,76 @@
+.calendar-container {
+    width: 100%;
+    height: 445px;
+    background-color: #28a745;
+    border-radius: 10px;
+    padding: 16px;
+    color: white;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+  }
+  
+  .calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+  
+  .calendar-title {
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .nav-button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  .calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+    height: calc(100% - 60px); /* Header yüksekliği çıkarılıyor */
+  }
+  
+  .calendar-day-name {
+    font-weight: bold;
+    text-align: center;
+    opacity: 0.7;
+  }
+  
+  .calendar-day {
+    text-align: center;
+    padding: 12px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100px;
+    height: 50px;
+  }
+  
+  .today {
+    border: 2px solid #28a745;
+    font-weight: bold;
+    background-color: #29ca4f;
+    color: white;
+  }
+
+  .calendar-day:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+  
+  .selected {
+    background-color: white;
+    color: #28a745;
+    font-weight: bold;
+  }
+  
+  .inactive {
+    opacity: 0.3;
+    pointer-events: none;
+  }
+  

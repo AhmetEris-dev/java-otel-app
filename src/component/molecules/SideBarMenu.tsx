@@ -3,8 +3,20 @@ import room from '../../pages/RoomPage'
 import { NavLink } from 'react-router-dom'
 import logo from '../../img/logo.jpg'
 import './SideBarMenu.css'
+import { useDispatch, useSelector } from 'react-redux'
+import { JavaOtelDispatch, OtelUseSelector } from '../../store'
+import { userLogout } from '../../store/feature/authSlice'
 
 function SideBarMenu() {
+
+    const dispatch = useDispatch<JavaOtelDispatch>();
+    const profile = OtelUseSelector(state => state.admin.profile);
+
+    const logout = async ()=>{
+        await localStorage.removeItem('token');
+        dispatch(userLogout());
+    }
+
     return (
         <>
             <NavLink to={'/admin'}  className="brand-link">
@@ -19,11 +31,17 @@ function SideBarMenu() {
                     <div className="image">
                         <img src="/dist/img/user2-160x160.jpg" className="img-circle elevation-2" alt="User Image" />
                     </div>
-                    <div className="info">
-                        <a href="#" className="d-block">Alexander Pierce</a>
+                    <div className="info" >
+                        <span className="d-block" style={{color: 'white'}}>{profile?.name}</span>
                     </div>
+                   
+                   
                 </div>
-
+                <div className="row ">
+                    <div className='d-grid'>
+                        <button className='btn btn-outline-success' onClick={logout}>Çıkış Yap</button>
+                    </div>
+                    </div>
 
 
 

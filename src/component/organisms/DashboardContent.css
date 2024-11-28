@@ -1,0 +1,52 @@
+/* Kart ve başlık stilleri */
+.card.bg-gradient-success {
+    background-color: #28a745 !important; /* Yeşil arka plan */
+    color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.card-header {
+    font-weight: bold;
+    font-size: 20px;
+    background: none; /* Header arka planını kaldır */
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* FullCalendar için başlık, gün isimleri ve hücre stilleri */
+.fc-toolbar-title {
+    font-size: 24px;
+    color: white !important;
+    border: none;
+}
+
+.fc-daygrid-day {
+    color: white;
+    border: none !important;
+    
+}
+
+.fc-daygrid-day-frame {
+    padding: 10px 0 !important; /* Hücrelerin yüksekliği ayarlanır */
+}
+
+.fc-daygrid-day-number {
+    color: #ffffff !important;
+    font-weight: bold;
+    border: none;
+}
+
+/* Kaldırma ve minimize butonları */
+.card-tools button {
+    color: #fff;
+    border: none;
+    background: transparent;
+}
+
+/* Dropdown butonu */
+.card-tools .btn {
+    background: none;
+}

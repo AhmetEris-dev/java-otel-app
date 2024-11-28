@@ -1,12 +1,14 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { reservationSlice } from "./feature";
+import { adminSlice, authSlice, reservationSlice } from "./feature";
 import { roomSlice} from './feature'
 import { useSelector } from "react-redux";
 
 const store = configureStore({
   reducer: {
     reservation: reservationSlice,
-    room: roomSlice
+    room: roomSlice,
+    auth: authSlice,
+    admin: adminSlice
   }
 })
 
