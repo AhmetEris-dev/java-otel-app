@@ -16,7 +16,7 @@ function WeeklyReservations() {
             curve: 'smooth',
         },
         xaxis: {
-            categories: ['Week 1', 'Week 2', 'Week 3', 'Week 4', 'Week 5', 'Week 6', 'Week 7'],
+            categories: ['January', 'February', 'March', 'April', 'June', 'July', 'August', 'September', 'November', 'December'],
             title: {
                 text: 'Weeks',
                 style: {

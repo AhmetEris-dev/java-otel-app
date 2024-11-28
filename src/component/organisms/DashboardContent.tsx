@@ -17,7 +17,7 @@ function DashboardContent() {
                         <div className="inner">
                             <h3>150</h3>
 
-                            <p>Oda Sayısı</p>
+                            <p style={{color: 'white', fontWeight: 'bold'}}>Oda Sayısı</p>
                         </div>
                         <div className="icon">
                             <i className="ion ion-bag"></i>
@@ -32,7 +32,7 @@ function DashboardContent() {
                         <div className="inner">
                             <h3>53<sup style={{ fontSize: '20px' }}>%</sup></h3>
 
-                            <p>Doluluk Oranı</p>
+                            <p style={{color: 'white', fontWeight: 'bold'}}>Doluluk Oranı</p>
                         </div>
                         <div className="icon">
                             <i className="ion ion-stats-bars"></i>
@@ -44,9 +44,9 @@ function DashboardContent() {
                 <div className="col-lg-3 col-6">
                     <div className="small-box bg-warning">
                         <div className="inner">
-                            <h3>44</h3>
+                            <h3 style={{color: 'white'}}>44</h3>
 
-                            <p>Rezervasyon Sayısı</p>
+                            <p style={{color: 'white', fontWeight: 'bold'}}>Rezervasyon Sayısı</p>
                         </div>
                         <div className="icon">
                             <i className="ion ion-person-add"></i>
@@ -59,7 +59,7 @@ function DashboardContent() {
                         <div className="inner">
                             <h3>44</h3>
 
-                            <p>Müşteri Sayısı</p>
+                            <p style={{color: 'white', fontWeight: 'bold'}}>Müşteri Sayısı</p>
                         </div>
                         <div className="icon">
                             <i className="ion ion-person-add"></i>
