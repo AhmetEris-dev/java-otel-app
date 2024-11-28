@@ -108,7 +108,7 @@ const roomSlice = createSlice({
         build.addCase(fetchUpdateRooms.pending, (state) => {
             state.isLoadingUpdateRoomList = true
         })
-        build.addCase(fetchUpdateRooms.fulfilled, (state) => {
+        build.addCase(fetchUpdateRooms.fulfilled, (state, action: PayloadAction<IBaseResponse>) => {
             state.isLoadingUpdateRoomList = false
         })
         build.addCase(fetchDeleteRooms.pending, (state) => {

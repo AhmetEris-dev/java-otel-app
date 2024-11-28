@@ -1,3 +1,72 @@
-body{
+/* Apply only inside the login page container */
+#login-page .logo {
+    transition: transform 0.3s ease;
+}
+
+#login-page .logo:hover {
+    transform: scale(1.1);
+}
+
+.login-body{
     background-color: white;
+    height: 80vh;
+}
+
+.login-header{
+    font-family: "Montserrat", serif;
+    font-style: normal;
+}
+
+#login-page .x-input {
+    padding: 18px;
+    background-color: #F7F7F7; /* Daha açık bir arka plan */
+    width: 85%;
+    height: 60px;
+    margin-left: 5px;
+    border: 2px solid #B0BEC5; /* Daha belirgin ve modern bir kenarlık */
+    color: #333;  /* Daha okunabilir metin rengi */
+    border-radius: 8px;
+    font-size: 16px; /* Daha büyük metin */
+    transition: border 0.3s ease, box-shadow 0.3s ease; /* Geçiş efektleri */
+    font-family: "Montserrat", serif;
+    font-style: normal;
+}
+
+#login-page .x-input:focus {
+    outline: none; 
+    border-color: #1F3B4D; 
+    box-shadow: 0 0 8px rgba(31, 59, 77, 0.3); 
+    font-family: "Montserrat", serif;
+    font-style: normal;
+}
+
+#login-page .x-input:focus-within {
+    border-color: #1F3B4D;
+}
+
+#login-page .x-input::placeholder {
+    color: #A1A1A1; 
+    opacity: 0.7; 
+    font-family: "Montserrat", serif;
+    font-style: normal;
+    font-size: 14px;
+}
+
+#login-page .btn-outline-dark {
+    border: 2px solid #D4AF37;
+    color: #D4AF37;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px; /* Buton metin boyutu */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    font-family: "Montserrat", serif;
+    font-style: normal;
+    font-size: 15px;
+}
+
+#login-page .btn-outline-dark:hover {
+    background: linear-gradient(90deg, #34495e, #2c3e50);
+    color: white;
+    border-color: #1F3B4D;
 }

@@ -8,7 +8,7 @@ import { IRoomRequest } from '../../models/IRoomRequest';
 import swal from 'sweetalert'
 import { IRoomResponse } from '../../models/IRoomResponse';
 import { IRoomUpdateRequest } from '../../models/IRoomUpdateRequest';
-import { IRoomDeleteRequest } from '../../models/IRoomDeleteRequest';
+
 import './RoomPage.css'
 
 
@@ -63,13 +63,13 @@ function RoomPage() {
                     text: 'Hayır',
                     value: false,
                     visible: true,
-                    className: 'swal-button-cancel' 
+                    className: 'swal-button-cancel'
                 },
                 confirm: {
                     text: 'Evet',
                     value: true,
                     visible: true,
-                    className: 'swal-button-confirm' 
+                    className: 'swal-button-confirm'
                 },
             }
         })
@@ -84,6 +84,7 @@ function RoomPage() {
                 }
             });
     }
+    
 
     return (
         <>
@@ -109,13 +110,19 @@ function RoomPage() {
                             <div className="col-12">
                                 <div className="card">
                                     <div className="card-header ">
+                                        <div className="col-6">
                                         <h3 className="card-title mt-3">Oda Listesi</h3>
-
+                                        </div>
+                                        
+                                        <div className='col-6 text-end'>
+                                        <button type="button" className="btn btn-success m-1" style={{ height: '50px', width: '120px', fontSize: '18px', }} data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                            Oda Ekle
+                                        </button>
+                                        </div>
+                                       
                                         <div className="card-tools">
                                             <div className="input-group input-group-sm">
-                                                <button type="button" className="btn btn-success m-1" style={{height: '50px', width: '120px', fontSize: '18px'}} data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                                    Oda Ekle
-                                                </button>
+
                                             </div>
                                         </div>
                                     </div>

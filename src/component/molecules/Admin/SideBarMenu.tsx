@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react'
 import room from '../../../pages/Admin/RoomPage'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 import logo from '../../../img/logo-new.webp'
 import './SideBarMenu.css'
 import { useDispatch, useSelector } from 'react-redux'
@@ -11,10 +11,12 @@ function SideBarMenu() {
 
     const dispatch = useDispatch<JavaOtelDispatch>();
     const profile = OtelUseSelector(state => state.admin.profile);
-
+    const navigate = useNavigate();
+   
     const logout = async () => {
         await localStorage.removeItem('token');
         dispatch(userLogout());
+        navigate('/login');
     }
 
     return (
@@ -27,8 +29,7 @@ function SideBarMenu() {
                     style={{ opacity: .8, marginRight: '10px'}}
                 />
                 <div className="d-flex flex-column">
-                    <span className="brand-text font-weight-light">Java Hotel</span>
-                    <span className="brand-text font-weight-light">Admin Paneli</span>
+                    <span className="brand-text font-weight-light" style={{fontSize: '18px'}}>Admin Paneli</span>
                 </div>
             </NavLink>
 
@@ -41,7 +42,7 @@ function SideBarMenu() {
                     </div>
                     <div className="info d-flex flex-column">
                         <span className="d-block" style={{ color: 'white' }}>Hoşgeldiniz!</span>
-                        <span className="d-block" style={{ color: 'white' }}>{profile?.name + ' ' + profile?.surname}</span>
+                        <span className="d-block" style={{ color: 'white' }}>  {profile?.name} {profile?.surname ? profile.surname : ''}</span>
                     </div>
                 </div>
 
@@ -59,7 +60,7 @@ function SideBarMenu() {
 
                         <li className="nav-item ">
                             <NavLink to={'/admin/room'} className="nav-link">
-                                <i className="fa-solid fa-house ms-1"></i>
+                                <i className="fa-solid fa-house "></i>
                                 <p className='ms-2'>
                                     Odalar
                                 </p>

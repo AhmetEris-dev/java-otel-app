@@ -23,8 +23,6 @@ function AdminPage() {
 
 
 
-
-
             {/**Menü Başlangıç */}
             <aside className="main-sidebar sidebar-dark-primary elevation-4" style={{ height: '100vh' }}>
                 <SideBarMenu />
